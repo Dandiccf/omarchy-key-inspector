@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.dandiccf.key-inspector",
+  "name": "Key Inspector",
+  "version": "1.0.0",
+  "author": "Dandiccf",
+  "license": "MIT",
+  "description": "Inspect keyboard events and copy a detailed report from a focused Omarchy bar panel.",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Key Inspector",
+    "description": "Visual key and shortcut viewer with a recent-key history",
+    "category": "Utilities",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
