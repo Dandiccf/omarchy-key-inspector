@@ -1,6 +1,6 @@
 # Key Inspector for Omarchy
 
-See what a key press actually sends to Omarchy. Key Inspector adds a keyboard icon to the bar and opens a focused panel that shows the latest key, modifiers, raw codes, and a short history. **Copy full report** produces a ready-to-paste description for a person or coding agent helping you create a binding.
+See what a key press actually sends to Omarchy, regardless of keyboard model or layout. Key Inspector adds a keyboard icon to the bar and opens a focused panel that shows the latest key, modifiers, raw codes, and a short history. **Copy full report** produces a ready-to-paste description for a person or coding agent helping you create a binding.
 
 ![Key Inspector panel](preview.png)
 
@@ -23,7 +23,7 @@ omarchy plugin enable io.github.dandiccf.key-inspector right
 1. Click the keyboard icon in the Omarchy bar. The panel says **Ready** when it has focus.
 2. Press a key or shortcut. The panel names common keys, including arrows, screen brightness, media, and volume controls, and shows the received combination, Qt key value, native scan code, event text, and a candidate Hyprland `code:` key.
 3. Press more keys to compare them. The latest eight captures remain visible.
-4. Click **Copy full report** and paste the result to the person or agent helping you. Fill in the keyboard model and the label printed on the physical button; software cannot infer those from the event.
+4. Click **Copy full report** and paste the result to the person or agent helping you. You can add the keyboard model or printed key label if that context helps; software cannot infer either from the event.
 
 Click **Clear history** to erase the captures in the panel. Press **Esc** or click **Close** to dismiss it. The panel requests shortcut inhibition while focused, so desktop shortcuts can be inspected without running their usual actions. If the status does not say **Ready**, click inside the panel first.
 
@@ -33,7 +33,7 @@ Click **Clear history** to erase the captures in the panel. Press **Esc** or cli
 - A candidate Hyprland binding such as `SUPER + SHIFT + code:12`
 - Qt key enum, key and modifier values, native scan code, and text
 - Up to eight recent captures, newest first
-- Placeholders for the keyboard model and physical button label
+- Optional placeholders for the keyboard model and printed key label
 
 The `code:` value is useful when a keyboard sends an unexpected key, but confirm the binding on your system before replacing an existing shortcut. A keyboard's **Fn** key can be handled entirely by its firmware. If `Fn + key` and `key` produce identical captures, Omarchy cannot assign them separate actions without a different keyboard mode or firmware mapping.
 
@@ -41,7 +41,7 @@ Some labeled function buttons send a shortcut instead of a dedicated media key. 
 
 On Qt 6.11 and newer, less common keys use Qt's own enum name when no friendlier label is defined. Older Qt versions still show the raw numeric key if no label is available.
 
-On a German layout, the key left of `1` commonly sends a dead circumflex (`^`), or degree (`°`) with Shift. The panel names those event values while retaining the raw Qt value and scan code in the report.
+Keys such as dead circumflex (`^`) and degree (`°`) are named from the Qt event they produce, wherever they appear on a keyboard. The report also retains the raw Qt value and scan code.
 
 ## Privacy and behavior
 

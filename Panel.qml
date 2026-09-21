@@ -32,8 +32,8 @@ Panel {
   function copyReport() {
     if (!shortcut) return
     var report = "Omarchy Key Inspector report\n"
-      + "Keyboard model: [enter model if known]\n"
-      + "Physical button: [describe the printed key when sending this report]\n\n"
+      + "Keyboard model (optional): [enter if known]\n"
+      + "Printed key label (optional): [describe if useful]\n\n"
       + "Latest capture\n"
       + "Received: " + latest + "\n"
       + "Hyprland key: " + shortcut + "\n"
@@ -90,7 +90,7 @@ Panel {
     names[Qt.Key_Backtab] = "Tab"
     names[Qt.Key_Backspace] = "Backspace"
     names[Qt.Key_Return] = "Return"
-    names[Qt.Key_Enter] = "Numpad Enter"
+    names[Qt.Key_Enter] = "Enter"
     names[Qt.Key_Space] = "Space"
     names[Qt.Key_CapsLock] = "Caps Lock"
     names[Qt.Key_AltGr] = "AltGr"
