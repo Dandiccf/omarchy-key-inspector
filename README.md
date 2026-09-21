@@ -2,6 +2,8 @@
 
 See what a key press actually sends to Omarchy. Key Inspector adds a keyboard icon to the bar and opens a focused panel that shows the latest key, modifiers, raw codes, and a short history. **Copy full report** produces a ready-to-paste description for a person or coding agent helping you create a binding.
 
+![Key Inspector panel](preview.png)
+
 ## Install
 
 Requires an Omarchy release with shell plugins, a Wayland compositor that supports shortcut inhibition, and `wl-copy` from `wl-clipboard` for the report button. These are available in a standard Omarchy installation.
