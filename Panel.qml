@@ -56,6 +56,9 @@ Panel {
     names[Qt.Key_Right] = "Right Arrow"
     names[Qt.Key_Up] = "Up Arrow"
     names[Qt.Key_Down] = "Down Arrow"
+    names[Qt.Key_Dead_Circumflex] = "Circumflex (dead key)"
+    names[Qt.Key_AsciiCircum] = "Circumflex (^)"
+    names[Qt.Key_degree] = "Degree (°)"
     names[Qt.Key_Print] = "Print Screen"
     names[Qt.Key_Insert] = "Insert"
     names[Qt.Key_Delete] = "Delete"
@@ -95,11 +98,17 @@ Panel {
     names[Qt.Key_Control] = "Ctrl"
     names[Qt.Key_Alt] = "Alt"
     names[Qt.Key_Meta] = "Super"
-    return names[k] || (event.text ? event.text : "Qt key " + k)
+    if (names[k]) return names[k]
+    if (event.text) return event.text
+    var enumName = qtEnumName(k)
+    return enumName ? enumName.replace(/^Key_/, "").replace(/_/g, " ")
+      .replace(/([a-z0-9])([A-Z])/g, "$1 $2") : "Qt key " + k
   }
 
-  function optionalNative(value) {
-    return value === undefined || value === null ? "(not provided)" : String(value)
+  function qtEnumName(key) {
+    if (typeof Qt.enumValueToString !== "function") return ""
+    try { return Qt.enumValueToString(Qt.Key, key) }
+    catch (error) { return "" }
   }
 
   function modifierNames(mask) {
@@ -122,10 +131,9 @@ Panel {
     shortcut = modifierNames(event.modifiers).concat(["code:" + event.nativeScanCode]).join(" + ")
     copyStatus = ""
     latestRaw = "Qt key: " + event.key
+      + "\nQt enum: " + (qtEnumName(event.key) || "(not found)")
       + "\nQt modifiers: " + event.modifiers
       + "\nNative scan code: " + event.nativeScanCode
-      + "\nNative virtual key: " + optionalNative(event.nativeVirtualKey)
-      + "\nNative modifiers: " + optionalNative(event.nativeModifiers)
       + "\nText: " + (event.text ? JSON.stringify(event.text) : "(none)")
     detail = "Qt key " + event.key + "    scan " + event.nativeScanCode
       + "    text " + (event.text ? JSON.stringify(event.text) : "—")

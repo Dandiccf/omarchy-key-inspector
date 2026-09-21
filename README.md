@@ -31,13 +31,17 @@ Click **Clear history** to erase the captures in the panel. Press **Esc** or cli
 
 - The received key name and modifiers
 - A candidate Hyprland binding such as `SUPER + SHIFT + code:12`
-- Qt key and modifier values, native scan code, native virtual key, native modifiers, and text
+- Qt key enum, key and modifier values, native scan code, and text
 - Up to eight recent captures, newest first
 - Placeholders for the keyboard model and physical button label
 
 The `code:` value is useful when a keyboard sends an unexpected key, but confirm the binding on your system before replacing an existing shortcut. A keyboard's **Fn** key can be handled entirely by its firmware. If `Fn + key` and `key` produce identical captures, Omarchy cannot assign them separate actions without a different keyboard mode or firmware mapping.
 
 Some labeled function buttons send a shortcut instead of a dedicated media key. The panel reports the actual combination, such as `CTRL + Up Arrow`, rather than guessing which symbol is printed on the keycap.
+
+On Qt 6.11 and newer, less common keys use Qt's own enum name when no friendlier label is defined. Older Qt versions still show the raw numeric key if no label is available.
+
+On a German layout, the key left of `1` commonly sends a dead circumflex (`^`), or degree (`°`) with Shift. The panel names those event values while retaining the raw Qt value and scan code in the report.
 
 ## Privacy and behavior
 
