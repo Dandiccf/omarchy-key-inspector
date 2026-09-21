@@ -21,7 +21,7 @@ omarchy plugin enable io.github.dandiccf.key-inspector right
 ## Use
 
 1. Click the keyboard icon in the Omarchy bar. The panel says **Ready** when it has focus.
-2. Press a key or shortcut. The panel names common keys, including the four arrow keys, and shows the received combination, Qt key value, native scan code, event text, and a candidate Hyprland `code:` key.
+2. Press a key or shortcut. The panel names common keys, including arrows, screen brightness, media, and volume controls, and shows the received combination, Qt key value, native scan code, event text, and a candidate Hyprland `code:` key.
 3. Press more keys to compare them. The latest eight captures remain visible.
 4. Click **Copy full report** and paste the result to the person or agent helping you. Fill in the keyboard model and the label printed on the physical button; software cannot infer those from the event.
 
@@ -36,6 +36,8 @@ Click **Clear history** to erase the captures in the panel. Press **Esc** or cli
 - Placeholders for the keyboard model and physical button label
 
 The `code:` value is useful when a keyboard sends an unexpected key, but confirm the binding on your system before replacing an existing shortcut. A keyboard's **Fn** key can be handled entirely by its firmware. If `Fn + key` and `key` produce identical captures, Omarchy cannot assign them separate actions without a different keyboard mode or firmware mapping.
+
+Some labeled function buttons send a shortcut instead of a dedicated media key. The panel reports the actual combination, such as `CTRL + Up Arrow`, rather than guessing which symbol is printed on the keycap.
 
 ## Privacy and behavior
 
