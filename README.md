@@ -21,7 +21,7 @@ omarchy plugin enable io.github.dandiccf.key-inspector right
 ## Use
 
 1. Click the keyboard icon in the Omarchy bar. The panel says **Ready** when it has focus.
-2. Press a key or shortcut. The panel shows the received combination, Qt key value, native scan code, event text, and a candidate Hyprland `code:` key.
+2. Press a key or shortcut. The panel names common keys, including the four arrow keys, and shows the received combination, Qt key value, native scan code, event text, and a candidate Hyprland `code:` key.
 3. Press more keys to compare them. The latest eight captures remain visible.
 4. Click **Copy full report** and paste the result to the person or agent helping you. Fill in the keyboard model and the label printed on the physical button; software cannot infer those from the event.
 

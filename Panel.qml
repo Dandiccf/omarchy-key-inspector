@@ -52,6 +52,10 @@ Panel {
     if (k >= Qt.Key_0 && k <= Qt.Key_9) return String.fromCharCode(k)
     if (k >= Qt.Key_F1 && k <= Qt.Key_F24) return "F" + (k - Qt.Key_F1 + 1)
     var names = {}
+    names[Qt.Key_Left] = "Left Arrow"
+    names[Qt.Key_Right] = "Right Arrow"
+    names[Qt.Key_Up] = "Up Arrow"
+    names[Qt.Key_Down] = "Down Arrow"
     names[Qt.Key_Print] = "Print Screen"
     names[Qt.Key_Insert] = "Insert"
     names[Qt.Key_Delete] = "Delete"
@@ -66,15 +70,22 @@ Panel {
     names[Qt.Key_Menu] = "Menu"
     names[Qt.Key_Escape] = "Escape"
     names[Qt.Key_Tab] = "Tab"
+    names[Qt.Key_Backtab] = "Tab"
     names[Qt.Key_Backspace] = "Backspace"
     names[Qt.Key_Return] = "Return"
+    names[Qt.Key_Enter] = "Numpad Enter"
     names[Qt.Key_Space] = "Space"
+    names[Qt.Key_CapsLock] = "Caps Lock"
     names[Qt.Key_AltGr] = "AltGr"
     names[Qt.Key_Shift] = "Shift"
     names[Qt.Key_Control] = "Ctrl"
     names[Qt.Key_Alt] = "Alt"
     names[Qt.Key_Meta] = "Super"
     return names[k] || (event.text ? event.text : "Qt key " + k)
+  }
+
+  function optionalNative(value) {
+    return value === undefined || value === null ? "(not provided)" : String(value)
   }
 
   function modifierNames(mask) {
@@ -99,8 +110,8 @@ Panel {
     latestRaw = "Qt key: " + event.key
       + "\nQt modifiers: " + event.modifiers
       + "\nNative scan code: " + event.nativeScanCode
-      + "\nNative virtual key: " + event.nativeVirtualKey
-      + "\nNative modifiers: " + event.nativeModifiers
+      + "\nNative virtual key: " + optionalNative(event.nativeVirtualKey)
+      + "\nNative modifiers: " + optionalNative(event.nativeModifiers)
       + "\nText: " + (event.text ? JSON.stringify(event.text) : "(none)")
     detail = "Qt key " + event.key + "    scan " + event.nativeScanCode
       + "    text " + (event.text ? JSON.stringify(event.text) : "—")
