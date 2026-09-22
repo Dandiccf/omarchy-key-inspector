@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import Quickshell.Io
 import Quickshell.Wayland
 import qs.Commons
 import qs.Ui
@@ -30,7 +31,7 @@ Panel {
   function toggle() { root.opened ? root.close() : root.open() }
 
   function copyReport() {
-    if (!shortcut) return
+    if (!shortcut || clipboardProcess.running) return
     var report = "Omarchy Key Inspector report\n"
       + "Keyboard model (optional): [enter if known]\n"
       + "Printed key label (optional): [describe if useful]\n\n"
@@ -41,9 +42,27 @@ Panel {
       + "Recent captures (newest first)\n"
       + history.join("\n") + "\n\n"
       + "Note: Fn may be handled inside the keyboard. Identical captures cannot be bound separately in Omarchy."
-    Quickshell.execDetached(["wl-copy", report])
-    copyStatus = "Full report copied"
+    clipboardProcess.report = report
+    clipboardProcess.running = true
+    copyStatus = "Copying report…"
     keyCapture.forceActiveFocus()
+  }
+
+  Process {
+    id: clipboardProcess
+    command: ["wl-copy"]
+    stdinEnabled: true
+    property string report: ""
+
+    onStarted: {
+      write(report)
+      report = ""
+      stdinEnabled = false
+    }
+    onExited: function(exitCode) {
+      stdinEnabled = true
+      root.copyStatus = exitCode === 0 ? "Full report copied" : "Could not copy report"
+    }
   }
 
   function keyName(event) {

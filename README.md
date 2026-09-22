@@ -47,7 +47,7 @@ Keys such as dead circumflex (`^`) and degree (`°`) are named from the Qt event
 
 Key Inspector receives keys only while its panel has focus. It keeps up to eight captures in shell memory and does not write them to disk or send them over the network. Copying a report places those captures on the system clipboard, where your clipboard manager may retain them. Clear the history after inspecting sensitive keys.
 
-The plugin changes no keyboard bindings or system configuration. Its only external command is `wl-copy` when you click **Copy full report**.
+The plugin changes no keyboard bindings or system configuration. Its only external command is `wl-copy` when you click **Copy full report**. It sends the report through the command's standard input so captured keys do not appear in the process argument list.
 
 ## Remove
 

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.dandiccf.key-inspector",
   "name": "Key Inspector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Dandiccf",
   "license": "MIT",
   "description": "Inspect keyboard events and copy a detailed report from a focused Omarchy bar panel.",
