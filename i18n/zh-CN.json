@@ -1,0 +1,15 @@
+{
+  "Clear history": "清空历史",
+  "Click here to focus": "点击此处获取焦点",
+  "Close (Esc)": "关闭 (Esc)",
+  "Copy full report": "复制完整报告",
+  "Copying report…": "正在复制报告…",
+  "Could not copy report": "无法复制报告",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "Fn 可能由键盘内部处理。如果两次按键在此显示相同结果，Omarchy 就无法分别绑定它们。",
+  "Full report copied": "完整报告已复制",
+  "Press a key": "请按下按键",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "按下按键以查看 Omarchy 收到的内容。此面板获得焦点时，快捷键会暂停。",
+  "RECENT KEYS": "最近按键",
+  "Ready": "就绪",
+  "The key and modifiers will appear here.": "此处将显示按键及修饰键。"
+}

@@ -1,0 +1,15 @@
+{
+  "Clear history": "इतिहास साफ़ करें",
+  "Click here to focus": "फ़ोकस के लिए यहाँ क्लिक करें",
+  "Close (Esc)": "बंद करें (Esc)",
+  "Copy full report": "पूरी रिपोर्ट कॉपी करें",
+  "Copying report…": "रिपोर्ट कॉपी हो रही है…",
+  "Could not copy report": "रिपोर्ट कॉपी नहीं हो सकी",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "Fn कीबोर्ड के अंदर संसाधित हो सकता है। अगर दो दबाव यहाँ एक जैसा परिणाम दिखाएँ, तो Omarchy उन्हें अलग-अलग बाँध नहीं सकता।",
+  "Full report copied": "पूरी रिपोर्ट कॉपी हुई",
+  "Press a key": "कोई कुंजी दबाएँ",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "कुंजी दबाकर देखें कि Omarchy को क्या मिलता है। इस पैनल के फ़ोकस में रहने पर शॉर्टकट रुके रहते हैं।",
+  "RECENT KEYS": "हाल की कुंजियाँ",
+  "Ready": "तैयार",
+  "The key and modifiers will appear here.": "कुंजी और मॉडिफ़ायर यहाँ दिखेंगे।"
+}

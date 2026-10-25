@@ -1,0 +1,15 @@
+{
+  "Clear history": "Wyczyść historię",
+  "Click here to focus": "Kliknij tutaj, aby aktywować",
+  "Close (Esc)": "Zamknij (Esc)",
+  "Copy full report": "Kopiuj pełny raport",
+  "Copying report…": "Kopiowanie raportu…",
+  "Could not copy report": "Nie udało się skopiować raportu",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "Klawisz Fn może być obsługiwany wewnątrz klawiatury. Jeśli dwa naciśnięcia dają tu ten sam wynik, Omarchy nie może przypisać im osobnych skrótów.",
+  "Full report copied": "Pełny raport skopiowany",
+  "Press a key": "Naciśnij klawisz",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "Naciśnij klawisz, aby zobaczyć, co otrzymuje Omarchy. Skróty są wstrzymane, gdy ten panel jest aktywny.",
+  "RECENT KEYS": "OSTATNIE KLAWISZE",
+  "Ready": "Gotowe",
+  "The key and modifiers will appear here.": "Tutaj pojawią się klawisz i modyfikatory."
+}

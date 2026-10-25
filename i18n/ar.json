@@ -1,0 +1,15 @@
+{
+  "Clear history": "مسح السجل",
+  "Click here to focus": "انقر هنا للتركيز",
+  "Close (Esc)": "إغلاق (Esc)",
+  "Copy full report": "نسخ التقرير الكامل",
+  "Copying report…": "جارٍ نسخ التقرير…",
+  "Could not copy report": "تعذر نسخ التقرير",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "قد يُعالج Fn داخل لوحة المفاتيح. إذا أعطت ضغطتان النتيجة نفسها هنا، فلن يستطيع Omarchy ربطهما بشكل منفصل.",
+  "Full report copied": "نُسخ التقرير الكامل",
+  "Press a key": "اضغط على مفتاح",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "اضغط على مفتاح لرؤية ما يستقبله Omarchy. تتوقف الاختصارات مؤقتًا عندما تكون هذه اللوحة في موضع التركيز.",
+  "RECENT KEYS": "المفاتيح الأخيرة",
+  "Ready": "جاهز",
+  "The key and modifiers will appear here.": "سيظهر المفتاح ومفاتيح التعديل هنا."
+}

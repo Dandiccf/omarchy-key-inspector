@@ -3,24 +3,26 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
 import qs.Commons
+import qs.Commons as Commons
 import qs.Ui
 
 Panel {
   id: root
+  PluginTranslations { id: strings }
   moduleName: "io.github.dandiccf.key-inspector"
   manageIpc: false
 
   property var anchorItem: null
   property var hostWidget: null
   property var history: []
-  property string latest: "Press a key"
-  property string detail: "The key and modifiers will appear here."
+  property string latest: ""
+  property string detail: ""
   property string shortcut: ""
   property string copyStatus: ""
   property string latestRaw: ""
 
   readonly property var barIdentity: hostWidget || root
-  readonly property color foreground: bar ? bar.foreground : Color.foreground
+  readonly property color foreground: bar ? bar.foreground : Commons.Color.foreground
   readonly property string fontFamily: bar ? bar.fontFamily : Style.font.family
 
   function open() {
@@ -171,6 +173,8 @@ Panel {
 
     Item {
       id: keyCapture
+      LayoutMirroring.enabled: strings.rightToLeft
+      LayoutMirroring.childrenInherit: true
       width: parent.width
       implicitHeight: content.implicitHeight
       height: implicitHeight
@@ -198,31 +202,32 @@ Panel {
 
       Column {
         id: content
+        objectName: "keyInspectorContent"
         width: parent.width
         spacing: Style.space(10)
 
         Row {
           width: parent.width
           spacing: Style.space(10)
-          Text {
+          Text { textFormat: Text.PlainText;
             text: "⌨  Key Inspector"
             color: root.foreground
             font.family: root.fontFamily
             font.pixelSize: Style.font.subtitle
             font.bold: true
           }
-          Text {
-            text: inhibitor.active ? "Ready" : "Click here to focus"
-            color: inhibitor.active ? Color.accent : root.foreground
+          Text { textFormat: Text.PlainText;
+            text: inhibitor.active ? strings.t("Ready") : strings.t("Click here to focus")
+            color: inhibitor.active ? Commons.Color.accent : root.foreground
             font.family: root.fontFamily
             font.pixelSize: Style.font.caption
             anchors.verticalCenter: parent.verticalCenter
           }
         }
 
-        Text {
+        Text { textFormat: Text.PlainText;
           width: parent.width
-          text: "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus."
+          text: strings.t("Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.")
           color: root.foreground
           opacity: 0.75
           font.family: root.fontFamily
@@ -232,25 +237,25 @@ Panel {
 
         Rectangle { width: parent.width; height: 1; color: root.foreground; opacity: 0.2 }
 
-        Text {
+        Text { textFormat: Text.PlainText;
           width: parent.width
-          text: root.latest
-          color: Color.accent
+          text: root.latest || strings.t("Press a key")
+          color: Commons.Color.accent
           font.family: root.fontFamily
           font.pixelSize: Style.font.display
           font.bold: true
           elide: Text.ElideRight
         }
-        Text {
+        Text { textFormat: Text.PlainText;
           width: parent.width
-          text: root.detail
+          text: root.detail || strings.t("The key and modifiers will appear here.")
           color: root.foreground
           opacity: 0.7
           font.family: "monospace"
           font.pixelSize: Style.font.caption
           elide: Text.ElideRight
         }
-        Text {
+        Text { textFormat: Text.PlainText;
           width: parent.width
           text: "Hyprland: " + root.shortcut
           color: root.foreground
@@ -261,8 +266,8 @@ Panel {
         }
 
         Rectangle { width: parent.width; height: 1; color: root.foreground; opacity: 0.2 }
-        Text {
-          text: "RECENT KEYS"
+        Text { textFormat: Text.PlainText;
+          text: strings.t("RECENT KEYS")
           color: root.foreground
           font.family: root.fontFamily
           font.pixelSize: Style.font.caption
@@ -270,7 +275,7 @@ Panel {
         }
         Repeater {
           model: root.history
-          Text {
+          Text { textFormat: Text.PlainText;
             required property string modelData
             width: content.width
             text: modelData
@@ -281,9 +286,9 @@ Panel {
           }
         }
 
-        Text {
+        Text { textFormat: Text.PlainText;
           width: parent.width
-          text: "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately."
+          text: strings.t("Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.")
           color: root.foreground
           opacity: 0.65
           font.family: root.fontFamily
@@ -293,24 +298,24 @@ Panel {
 
         Row {
           spacing: Style.space(16)
-          Text {
-            text: root.copyStatus || "Copy full report"
-            color: Color.accent
+          Text { textFormat: Text.PlainText;
+            text: strings.t(root.copyStatus || strings.t("Copy full report"))
+            color: Commons.Color.accent
             font.family: root.fontFamily
             font.pixelSize: Style.font.caption
             MouseArea { anchors.fill: parent; onClicked: root.copyReport() }
           }
-          Text {
-            text: "Clear history"
-            color: Color.accent
+          Text { textFormat: Text.PlainText;
+            text: strings.t("Clear history")
+            color: Commons.Color.accent
             font.family: root.fontFamily
             font.pixelSize: Style.font.caption
             MouseArea {
               anchors.fill: parent
               onClicked: {
                 root.history = []
-                root.latest = "Press a key"
-                root.detail = "The key and modifiers will appear here."
+                root.latest = ""
+                root.detail = ""
                 root.shortcut = ""
                 root.latestRaw = ""
                 root.copyStatus = ""
@@ -318,8 +323,8 @@ Panel {
               }
             }
           }
-          Text {
-            text: "Close (Esc)"
+          Text { textFormat: Text.PlainText;
+            text: strings.t("Close (Esc)")
             color: root.foreground
             font.family: root.fontFamily
             font.pixelSize: Style.font.caption

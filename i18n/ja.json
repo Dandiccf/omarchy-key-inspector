@@ -1,0 +1,15 @@
+{
+  "Clear history": "履歴を消去",
+  "Click here to focus": "ここをクリックしてフォーカス",
+  "Close (Esc)": "閉じる (Esc)",
+  "Copy full report": "完全なレポートをコピー",
+  "Copying report…": "レポートをコピー中…",
+  "Could not copy report": "レポートをコピーできませんでした",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "Fn はキーボード内部で処理される場合があります。2 回のキー操作がここで同じ結果になる場合、Omarchy は別々に割り当てられません。",
+  "Full report copied": "完全なレポートをコピーしました",
+  "Press a key": "キーを押してください",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "キーを押すと Omarchy が受け取る内容が表示されます。このパネルにフォーカスがある間はショートカットが一時停止します。",
+  "RECENT KEYS": "最近のキー",
+  "Ready": "準備完了",
+  "The key and modifiers will appear here.": "キーと修飾キーがここに表示されます。"
+}

@@ -1,0 +1,15 @@
+{
+  "Clear history": "Effacer l’historique",
+  "Click here to focus": "Cliquez ici pour donner le focus",
+  "Close (Esc)": "Fermer (Esc)",
+  "Copy full report": "Copier le rapport complet",
+  "Copying report…": "Copie du rapport…",
+  "Could not copy report": "Impossible de copier le rapport",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "Fn peut être traité dans le clavier. Si deux pressions donnent le même résultat ici, Omarchy ne peut pas leur attribuer des raccourcis distincts.",
+  "Full report copied": "Rapport complet copié",
+  "Press a key": "Appuyez sur une touche",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "Appuyez sur une touche pour voir ce qu’Omarchy reçoit. Les raccourcis sont suspendus tant que ce panneau a le focus.",
+  "RECENT KEYS": "TOUCHES RÉCENTES",
+  "Ready": "Prêt",
+  "The key and modifiers will appear here.": "La touche et ses modificateurs apparaîtront ici."
+}

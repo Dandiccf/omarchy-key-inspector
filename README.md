@@ -66,3 +66,13 @@ omarchy plugin validate .
 ```
 
 Key Inspector is licensed under the [MIT License](LICENSE).
+
+## Languages and Omarchy compatibility
+
+Includes English, German, Spanish, French, Portuguese, Italian, Polish, Russian, Arabic, Hindi, Japanese, Korean, and Simplified Chinese. On Omarchy 4.5+, the interface follows Setup → Language and changes live. Earlier Omarchy 4.x shells select translations from `LC_ALL`, then `LC_MESSAGES`, then `LANG` (Qt locale is the final fallback); restart the shell after changing the system locale. Regional variants fall back to the base language, then English. Spanish (Mexico) and Portuguese (Brazil) currently use their base catalogs. Arabic mirrors the interface.
+
+Catalogs live in `i18n/`. Copy `en.json` to `<language-code>.json` and translate values while preserving keys and `%1`/`%2`/`%3` placeholders. Native-speaker review is welcome. Unexpected technical diagnostics remain in their original language.
+
+Run `node tests/test-locale.js` and `bash tests/run-qml.sh` to check locale handling and the production UI with simulated input. `PLUGIN_TEST_SHELL=/path/to/older/shell bash tests/run-qml.sh` selects older Omarchy components. When running an older shell source with current Qt, `python3 tests/prepare-legacy-fixture.py /path/to/older/shell /tmp/legacy-shell` creates a disposable copy with namespace-only `Commons.Color` qualification. The old component APIs remain intact; this is not a full older OS/Qt installation test.
+
+Captured key names, modifier names, raw values, and copied diagnostic reports remain stable in English. Localization applies to the interface. Captures remain in memory, and copying still sends the report to `wl-copy` through standard input.

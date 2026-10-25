@@ -1,0 +1,15 @@
+{
+  "Clear history": "Очистить историю",
+  "Click here to focus": "Нажмите здесь для фокусировки",
+  "Close (Esc)": "Закрыть (Esc)",
+  "Copy full report": "Копировать полный отчёт",
+  "Copying report…": "Копирование отчёта…",
+  "Could not copy report": "Не удалось скопировать отчёт",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "Fn может обрабатываться внутри клавиатуры. Если два нажатия дают здесь одинаковый результат, Omarchy не сможет назначить им разные действия.",
+  "Full report copied": "Полный отчёт скопирован",
+  "Press a key": "Нажмите клавишу",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "Нажмите клавишу, чтобы увидеть, что получает Omarchy. Горячие клавиши приостановлены, пока эта панель в фокусе.",
+  "RECENT KEYS": "ПОСЛЕДНИЕ КЛАВИШИ",
+  "Ready": "Готово",
+  "The key and modifiers will appear here.": "Здесь появятся клавиша и модификаторы."
+}

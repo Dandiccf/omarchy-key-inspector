@@ -1,0 +1,15 @@
+{
+  "Clear history": "기록 지우기",
+  "Click here to focus": "여기를 클릭해 포커스",
+  "Close (Esc)": "닫기 (Esc)",
+  "Copy full report": "전체 보고서 복사",
+  "Copying report…": "보고서 복사 중…",
+  "Could not copy report": "보고서를 복사할 수 없습니다",
+  "Fn can stay inside the keyboard. If two presses show the same result here, Omarchy cannot bind them separately.": "Fn은 키보드 내부에서 처리될 수 있습니다. 두 키 입력이 여기서 같은 결과를 보이면 Omarchy에서 별도로 지정할 수 없습니다.",
+  "Full report copied": "전체 보고서 복사됨",
+  "Press a key": "키를 누르세요",
+  "Press a key to see what Omarchy receives. Shortcuts are paused while this panel has focus.": "키를 눌러 Omarchy가 받는 내용을 확인하세요. 이 패널에 포커스가 있는 동안 단축키는 일시 중지됩니다.",
+  "RECENT KEYS": "최근 키",
+  "Ready": "준비됨",
+  "The key and modifiers will appear here.": "키와 보조 키가 여기에 표시됩니다."
+}
